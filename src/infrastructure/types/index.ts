@@ -5,8 +5,7 @@ const TYPES = {
   Repository: Symbol.for("Repository"),
   Model: Symbol.for("Model"),
 
-  UserController: Symbol.for("UserController"),
-  User: Symbol.for("User"),
+  RiddleController: Symbol.for("RiddleController"),
 };
 
 export { TYPES };

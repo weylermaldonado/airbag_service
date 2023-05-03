@@ -2686,6 +2686,11 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
+runtypes@^6.6.0:
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/runtypes/-/runtypes-6.6.0.tgz#48e353d8b0f641ab5ec5d80fa96dd7bd41ea3281"
+  integrity sha512-ddM7sgB3fyboDlBzEYFQ04L674sKjbs4GyW2W32N/5Ae47NRd/GyMASPC2PFw8drPHYGEcZ0mZ26r5RcB8msfQ==
+
 safe-buffer@5.2.1, safe-buffer@^5.1.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"

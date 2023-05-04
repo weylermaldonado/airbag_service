@@ -17,7 +17,7 @@ services:
     networks:
       - repository-service
     logging:
-      driver: "none"
+      driver: "json-file"
   mongo:
     container_name: mongo-${PROJECT_NAME}
     image: mongo:4.4.6-bionic
@@ -34,7 +34,7 @@ services:
     networks:
       - repository-service
     logging:
-      driver: "none"
+      driver: "json-file"
 networks:
   repository-service:
     driver: bridge

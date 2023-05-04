@@ -4,19 +4,6 @@ The service-oriented architecture repository is part of an arrangement to store 
 
 ## Context
 
-Implement a REST API in NodeJs 16.x that handles CRUD requests.
-
-#### Example of a user
-
-```bash
-{
-    "email": "janet.weaver@reqres.in",
-    "name": "Janet Weaver",
-    "phone": "435594689",
-    "company": "StatusCode Weekly"
-}
-```
-
 - Create a Dockerized instance of this database. Write the NoSQL and a dockerfile to launch the DB, and create the collections required.
 
 ## Related Links
@@ -43,12 +30,24 @@ MONGODB_HOSTNAME=127.0.0.1 ## to build the container you should use "mongo" inst
 MONGODB_PORT=27018
 MONGODB_USERNAME=root
 MONGODB_PASSWORD=newPassword
-MONGODB_DATABASE=service_repository_dev
+MONGODB_DATABASE=airbag_service_dev
 ```
 
 ## Scripts
 
-### start
+### start all the project
+
+```bash
+docker-compose up --build
+```
+
+### start only mongo
+
+```bash
+docker-compose up --build mongo
+```
+
+### start only the server
 
 ```bash
 yarn start
@@ -84,9 +83,21 @@ Compile the project and run it
 yarn serve
 ```
 
+### test
+
+Compile the project and run it
+
+```bash
+yarn test
+```
+
 ## Documentation
 
 https://www.getpostman.com/collections/b1753be0afa7a703fe5b
+
+### Authentication
+
+When you start the service look at the console to find the JWT token for certain kind of endpoints.
 
 ## Production
 

@@ -98,6 +98,7 @@ https://www.getpostman.com/collections/b1753be0afa7a703fe5b
 ### Authentication
 
 When you start the service look at the console to find the JWT token for certain kind of endpoints.
+![token]("./img/Captura de Pantalla 2023-05-04 a la(s) 12.26.59.png")
 
 ## Production
 

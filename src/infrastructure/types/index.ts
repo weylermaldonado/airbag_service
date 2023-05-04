@@ -9,6 +9,7 @@ const TYPES = {
   RiddleController: Symbol.for("RiddleController"),
   CesarCipherRiddle: Symbol.for("CesarCipherRiddle"),
   BlackJackRiddle: Symbol.for("BlackJackRiddle"),
+  ClearNumbersRiddle: Symbol.for("ClearNumbersRiddle"),
 };
 
 export { TYPES };

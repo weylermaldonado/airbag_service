@@ -7,7 +7,9 @@ import { inject, injectable } from "inversify";
 class RiddleService {
   constructor(
     @inject(TYPES.BlackJackRiddle) private readonly blackJackRiddle: Riddle,
-    @inject(TYPES.CesarCipherRiddle) private readonly cesarCipherRiddle: Riddle
+    @inject(TYPES.CesarCipherRiddle) private readonly cesarCipherRiddle: Riddle,
+    @inject(TYPES.ClearNumbersRiddle)
+    private readonly clearNumbersRiddle: Riddle
   ) {}
 
   execute(riddle: RiddleDTO): Object {
@@ -18,6 +20,9 @@ class RiddleService {
       case "shiftcipher":
         this.cesarCipherRiddle.validateInput(riddle.getInput());
         return { result: this.cesarCipherRiddle.run(riddle.getInput()) };
+      case "clearduplicates":
+        this.clearNumbersRiddle.validateInput(riddle.getInput());
+        return { result: this.clearNumbersRiddle.run(riddle.getInput()) };
       default:
         throw new Error("Riddle not found.");
     }

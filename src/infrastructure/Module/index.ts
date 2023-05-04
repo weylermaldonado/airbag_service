@@ -9,6 +9,7 @@ import RiddleService from "@/services/riddle.service";
 import { RiddleController } from "@/controllers/riddle.controller";
 import { BlackJackRiddle } from "@/services/blackjack.riddle";
 import { CesarCipherRiddle } from "@/services/cesarcipher.riddle";
+import { ClearNumbersRiddle } from "@/services/clearnumbers.riddle";
 
 export const RiddleContainerModule = new ContainerModule(
   (bind: interfaces.Bind, unbind: interfaces.Unbind) => {
@@ -26,6 +27,9 @@ export const RiddleContainerModule = new ContainerModule(
     bind<Riddle>(TYPES.BlackJackRiddle).to(BlackJackRiddle).inSingletonScope();
     bind<Riddle>(TYPES.CesarCipherRiddle)
       .to(CesarCipherRiddle)
+      .inSingletonScope();
+    bind<Riddle>(TYPES.ClearNumbersRiddle)
+      .to(ClearNumbersRiddle)
       .inSingletonScope();
   }
 );

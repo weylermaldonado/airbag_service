@@ -1,5 +1,5 @@
 import { RiddleDTO } from "@/infrastructure/dto/riddle.dto";
-import { Riddle, Service } from "@/infrastructure/interfaces";
+import { Riddle } from "@/infrastructure/interfaces";
 import { TYPES } from "@/infrastructure/types";
 import { inject, injectable } from "inversify";
 

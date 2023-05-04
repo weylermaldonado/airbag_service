@@ -4,11 +4,14 @@ export interface CesarCipherInput {
 }
 
 export class RiddleDTO {
-  constructor(input: string | string[] | number[], name: string) {
+  constructor(
+    input: string | string[] | number[] | CesarCipherInput,
+    name: string
+  ) {
     this.input = input;
     this.riddle_name = name;
   }
-  private input: string | string[] | number[] = "";
+  private input: string | string[] | number[] | CesarCipherInput = "";
   private riddle_name: string = "";
 
   getInput(): string | string[] | number[] | CesarCipherInput {

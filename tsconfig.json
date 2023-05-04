@@ -13,7 +13,7 @@
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "types": ["reflect-metadata", "node", "webpack"],
+    "types": ["reflect-metadata", "node", "webpack", "jest"],
     "paths": {
       "@/*": ["src/*"]
     }

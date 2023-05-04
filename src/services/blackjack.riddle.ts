@@ -44,7 +44,7 @@ export class BlackJackRiddle implements Riddle {
       const isOne = Math.abs(diff - CARD_VALUES["A"][0]);
       const isEleven = Math.abs(diff - CARD_VALUES["A"][1]);
       const result = Math.min(isOne, isEleven);
-      result === isOne
+      result + isOne < 21
         ? (handValue += CARD_VALUES["A"][0])
         : (handValue += CARD_VALUES["A"][1]);
     }

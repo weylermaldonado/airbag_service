@@ -1,7 +1,7 @@
 import { RiddleDTO } from "../dto/riddle.dto";
 
 export interface Service {
-  execute(input: RiddleDTO): Promise<any>;
+  execute(input: RiddleDTO): Object;
 }
 export interface Controller {
   execute(...args: any): Promise<any>;

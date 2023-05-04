@@ -21,7 +21,7 @@ Implement a REST API in NodeJs 16.x that handles CRUD requests.
 
 ## Related Links
 
-- Postman Collection: https://www.getpostman.com/collections/a6da8f4b09a4a791298a.
+- Postman Collection: https://www.postman.com/galactic-comet-395216/workspace/airbag/collection/2967822-e96db05c-1249-44cf-9dd7-aa385f1630f1?action=share&creator=2967822
 
 ## Installation
 

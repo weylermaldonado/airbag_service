@@ -1,4 +1,4 @@
-import { Controller, Service } from "@/infrastructure/interfaces";
+import { Controller, Riddle, Service } from "@/infrastructure/interfaces";
 import Router from "@/routes";
 import { TYPES } from "@/infrastructure/types";
 import { Router as IRouter } from "express";
@@ -7,6 +7,7 @@ import { Model } from "mongoose";
 import { User } from "@/models/user.model";
 import RiddleService from "@/services/riddle.service";
 import { RiddleController } from "@/controllers/riddle.controller";
+import { BlackJackRiddle } from "@/services/blackjack.riddle";
 
 export const RiddleContainerModule = new ContainerModule(
   (bind: interfaces.Bind, unbind: interfaces.Unbind) => {
@@ -21,5 +22,6 @@ export const RiddleContainerModule = new ContainerModule(
       .to(RiddleController)
       .inSingletonScope();
     bind<Service>(TYPES.Service).to(RiddleService).inSingletonScope();
+    bind<Riddle>(TYPES.Riddle).to(BlackJackRiddle).inSingletonScope();
   }
 );

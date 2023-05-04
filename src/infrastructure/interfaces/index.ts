@@ -14,3 +14,8 @@ export interface Repository {
   delete(...args: any): Promise<any>;
   create(...args: any): Promise<any>;
 }
+
+export interface Riddle {
+  validateInput(...args: any): any;
+  run(...args: any): string | number | number[];
+}

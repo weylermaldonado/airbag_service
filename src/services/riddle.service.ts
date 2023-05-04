@@ -1,17 +1,21 @@
 import { RiddleDTO } from "@/infrastructure/dto/riddle.dto";
-import { Service } from "@/infrastructure/interfaces";
+import { Riddle, Service } from "@/infrastructure/interfaces";
 import { TYPES } from "@/infrastructure/types";
 import { inject, injectable } from "inversify";
-import BaseService from "./base.service";
 
 @injectable()
-class RiddleService extends BaseService {
-  constructor() {
-    super();
-  }
+class RiddleService {
+  constructor(@inject(TYPES.Riddle) private readonly blackJackRiddle: Riddle) {}
 
-  async execute(riddle: RiddleDTO): Promise<any> {
-    return { message: "hello from service" };
+  execute(riddle: RiddleDTO): Object {
+    switch (riddle.getName().toLowerCase()) {
+      case "blackjack":
+        this.blackJackRiddle.validateInput(riddle.getInput());
+        return { result: this.blackJackRiddle.run(riddle.getInput()) };
+
+      default:
+        throw new Error("Riddle not found.");
+    }
   }
 }
 export default RiddleService;

@@ -6,9 +6,14 @@ const RIDDLES_ALLOWED = Union(
   Literal("clearDuplicates")
 );
 
+const CesarCipherInput = Record({
+  shift: Number,
+  text: String,
+});
+
 export const RequestRiddle = Record({
   requestData: Record({
     riddle_type: RIDDLES_ALLOWED,
-    input: String.Or(Array(String)).Or(Array(Number)),
+    input: String.Or(Array(String)).Or(Array(Number)).Or(CesarCipherInput),
   }),
 });

@@ -1,10 +1,17 @@
+import { JWTToken } from "../auth/jwt.token";
 import { RiddleDTO } from "../dto/riddle.dto";
 
 export interface Service {
   execute(input: RiddleDTO): Object;
 }
+
+export interface JWT {
+  sign(data: object): Promise<JWTToken>;
+  verify(token: JWTToken): Promise<any>;
+}
 export interface Controller {
   execute(...args: any): Promise<any>;
+  getInfo(...args: any): Promise<any>;
 }
 
 export interface Repository {

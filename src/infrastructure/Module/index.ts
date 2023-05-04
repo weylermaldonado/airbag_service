@@ -1,15 +1,21 @@
-import { Controller, Riddle, Service } from "@/infrastructure/interfaces";
+import {
+  Controller,
+  Repository,
+  Riddle,
+  Service,
+} from "@/infrastructure/interfaces";
 import Router from "@/routes";
 import { TYPES } from "@/infrastructure/types";
 import { Router as IRouter } from "express";
 import { ContainerModule, interfaces } from "inversify";
 import { Model } from "mongoose";
-import { User } from "@/models/user.model";
+import { Request } from "@/models/request.model";
 import RiddleService from "@/services/riddle.service";
 import { RiddleController } from "@/controllers/riddle.controller";
 import { BlackJackRiddle } from "@/services/blackjack.riddle";
 import { CesarCipherRiddle } from "@/services/cesarcipher.riddle";
 import { ClearNumbersRiddle } from "@/services/clearnumbers.riddle";
+import { RequestRepository } from "@/repositories/request.repository";
 
 export const RiddleContainerModule = new ContainerModule(
   (bind: interfaces.Bind, unbind: interfaces.Unbind) => {
@@ -30,6 +36,10 @@ export const RiddleContainerModule = new ContainerModule(
       .inSingletonScope();
     bind<Riddle>(TYPES.ClearNumbersRiddle)
       .to(ClearNumbersRiddle)
+      .inSingletonScope();
+    bind<Model<any>>(TYPES.Request).toConstantValue(Request);
+    bind<Repository>(TYPES.RequestRepository)
+      .to(RequestRepository)
       .inSingletonScope();
   }
 );

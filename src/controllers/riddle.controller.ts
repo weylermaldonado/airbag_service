@@ -11,6 +11,29 @@ import { provide } from "inversify-binding-decorators";
 export class RiddleController implements Controller {
   constructor(@inject(TYPES.Service) private readonly riddleService: Service) {}
 
+  async getInfo(req: Request, res: Response, next: NextFunction): Promise<any> {
+    const data = {
+      riddles_availables: [
+        {
+          name: "blackjack",
+          description:
+            "Calcula el valor de una mano de cartas represtanda por un array de string ['A','2','K']",
+        },
+        {
+          name: "cesarCipher",
+          description:
+            "Cifra una cadena de texto moviendo la letra a la derecha N veces.",
+        },
+        {
+          name: "clearNumbers",
+          description: "Elimina numero repeditos dado un arreglo de numeros.",
+        },
+      ],
+    };
+
+    return res.send({ data });
+  }
+
   async execute(req: Request, res: Response, next: NextFunction): Promise<any> {
     try {
       // Validate request
